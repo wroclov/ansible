@@ -1,0 +1,7 @@
+[servers_piotr]
+my_random_host ansible_hosts=10.1.1.1
+
+[servers_piotr:vars]
+ansible_user=ansible
+ansible_ssh_pass=basicPassword
+ansible_become_pass=sudoPassword

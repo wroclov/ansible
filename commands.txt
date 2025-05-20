@@ -1,0 +1,24 @@
+
+#commands
+ansible-playbook -i inventory write-file.yml
+
+#asks for password
+ansible-playbook -i inventory -u ansible --ask-pass write-file.yml
+
+#privilege escalation --> sudo is like become in ansible naming
+ansible-playbook -i inventory -u ansible --ask-pass write-file.yml --ask-become-pass
+
+ansible-playbook -i inventory gather-facts.yml
+
+ansible-playbook -i inventory webserver.yml
+
+#to verify that http index.html is run
+curl http://10.1.1.1
+
+
+#shell commands executes same command, it doesn't know about state. echo hello > /tmp/hello.txt gives always same output.
+ansible-playbook -i inventory idempotent.yml
+
+ansible-playbook -i inventory variables_conditionals_loops.yml
+
+#AWX Ascender AAP tools for managing ansible from UI level application --> Who can do what, when and where
